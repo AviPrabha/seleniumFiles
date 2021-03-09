@@ -1,0 +1,28 @@
+
+
+"//tagName[@value='btn']"
+
+
+
+TakesScreenshot ts=(TakesScreenshot)driver;
+try{
+files.copy(ts.getScreenshotAs(Output.file),new File(filepath));
+}catch{
+}
+
+
+
+
+
+
+
+
+
+
+
+//button[@class='btn btn-primary']
+
+//p-autocomplete[@id='origin']
+//span[text()='BHUBANESWAR - BBS']
+
+//p-autocomplete[@formcontrolname='destination']
