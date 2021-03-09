@@ -1,0 +1,15 @@
+package com.odoo.pageobjects;
+
+import java.util.Random;
+
+public class TeamLeaderPage {
+	
+//	Random rdm=new Random();
+//	int number=rdm.nextInt(100);
+//	Object[] num= {number};
+	public String username="(//input[@name='name'])[2]";
+	public String email="//input[@placeholder='email@yourcompany.com']";
+	public String save="//button[@type='button']//span[text()='Save']";
+	
+	
+}

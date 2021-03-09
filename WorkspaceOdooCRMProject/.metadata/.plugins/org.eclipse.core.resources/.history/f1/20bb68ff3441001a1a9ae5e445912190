@@ -1,0 +1,9 @@
+package com.odoo.pageobjects;
+
+public class ScheduleActivityPage 
+{
+	public String enterActivityType="(//div[@class='o_input_dropdown']//input)[2]";
+	public String activityTypeEmail="//a[text()='Email']";
+	
+	
+}

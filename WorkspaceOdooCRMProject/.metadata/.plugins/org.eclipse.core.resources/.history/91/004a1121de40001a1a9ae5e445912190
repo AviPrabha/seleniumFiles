@@ -1,0 +1,14 @@
+package com.odoo.pageobjects;
+
+public abstract class BasePage 
+{
+	public String configBtn="//a[contains(text(),'Configuration')]";
+	public String salesTeam="//span[text()='Sales Teams']";
+	public String settings="//div[@class='dropdown-menu show']//span[text()='Settings']";
+	public String activityTypes="//li//span[text()='Activity Types']";
+	public String leads="//span[text()='Leads']";
+	public String clicklostReason="//span[text()='Lost Reasons']";
+	public String sales="//a[contains(text(),'Sales')]";
+	public String customers="//span[text()='Customers']";
+	
+}

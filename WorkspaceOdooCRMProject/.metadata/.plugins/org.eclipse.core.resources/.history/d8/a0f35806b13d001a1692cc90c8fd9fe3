@@ -1,0 +1,41 @@
+package com.odoo.steps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.Reporter;
+
+import com.odoo.generic.SeleniumLib;
+import com.odoo.pageobjects.OdooHomePage;
+
+public class OdooHomeSteps 
+{
+	WebDriver driver;
+	OdooHomePage ohp;
+	SeleniumLib slib;
+	
+	public OdooHomeSteps(WebDriver driver)
+	{
+		this.driver=driver;
+		ohp=new OdooHomePage();
+		slib=new SeleniumLib(driver);
+	}
+	
+	public void verifyCRM()
+	{
+		//slib.iSleep(3);
+		WebElement crmEle = slib.waitForElementPresent(20, By.xpath(ohp.crm));
+		
+		//Assert.assertTrue(crmEle.isDisplayed());
+		Reporter.log("CRM is displayed in Home Page", true);
+	}
+	
+	public void verifyUsername(String username)
+	{
+		String actualUsername = driver.findElement(By.xpath(ohp.username)).getText();
+		Assert.assertEquals(actualUsername, username);
+		Reporter.log("Logged in Username is verified", true);
+	}
+	
+}

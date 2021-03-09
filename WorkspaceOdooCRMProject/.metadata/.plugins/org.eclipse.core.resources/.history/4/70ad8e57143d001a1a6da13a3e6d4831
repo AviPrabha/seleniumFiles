@@ -1,0 +1,82 @@
+package com.odoo.steps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import com.odoo.pageobjects.OdooHomePage;
+import com.odoo.pageobjects.PipelineDashboardPage;
+import com.odoo.pageobjects.SalesTeamPage;
+import com.odoo.pageobjects.TeamLeaderPage;
+
+public class CreateSalesSteps 
+{
+	WebDriver driver;
+	OdooHomePage ohp;
+	PipelineDashboardPage pdp;
+	SalesTeamPage stp;
+	TeamLeaderPage tlp;
+	
+	public CreateSalesSteps(WebDriver driver) 
+	{
+		this.driver=driver;
+		ohp=new OdooHomePage(); 
+		pdp=new PipelineDashboardPage();
+		stp=new SalesTeamPage();
+		tlp=new TeamLeaderPage();
+	}
+	 
+	public void clickCRM()
+	{
+		driver.findElement(By.xpath(ohp.crm)).click();
+	}
+	
+	public void clickConfiguration()
+	{
+		driver.findElement(By.xpath(pdp.configBtn)).click();
+	}
+	
+	public void clkSalesTeam() 
+	{
+		driver.findElement(By.xpath(pdp.salesTeam)).click();
+	}
+	
+	public void createsalesTeam() 
+	{
+		driver.findElement(By.xpath(stp.createSalesTeam)).click();
+	}
+
+	public void enterSalesTeamName() 
+	{
+		driver.findElement(By.xpath(stp.enterSalesTeamName)).sendKeys("Jaguar");
+	}
+	
+	public void TeamLeader() 
+	{
+		driver.findElement(By.xpath(stp.enterTeamLeaderName)).click();
+	}
+	
+	public void createAndEdit()
+	{
+		driver.findElement(By.xpath(stp.createAndEdit)).click();
+	}
+	
+	public void teamLeaderName() 
+	{
+		driver.findElement(By.xpath(tlp.username)).sendKeys("Panther");
+	}
+	
+	public void email()
+	{
+		driver.findElement(By.xpath(tlp.email)).sendKeys("akavinash93@gmail.com");
+	}
+	
+	public void save()
+	{
+		driver.findElement(By.xpath(tlp.save)).click();
+	}
+	public void savesalesTeam()
+	{
+		driver.findElement(By.xpath(stp.save)).click();
+	}
+	
+	
+}

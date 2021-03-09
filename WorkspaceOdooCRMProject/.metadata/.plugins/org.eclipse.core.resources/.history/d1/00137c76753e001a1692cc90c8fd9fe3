@@ -1,0 +1,36 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.generic.SeleniumLib;
+import com.odoo.steps.CheckLeadSteps;
+import com.odoo.steps.CreateSalesSteps;
+
+public class SettingsFeatures 
+{
+	SeleniumLib slib;
+	CheckLeadSteps cls;
+	LoginFeatures lf;
+	CreateSalesSteps css;
+	
+	
+	public SettingsFeatures(WebDriver driver)
+	{
+		slib=new SeleniumLib(driver);
+		cls=new CheckLeadSteps(driver);
+		lf=new LoginFeatures(driver);
+		css=new CreateSalesSteps(driver);
+	}
+	
+	public void chkLeadBx(String username,String password)
+	{
+		lf.login(username, password);
+		css.clickCRM();
+		cls.clkConfig();
+		cls.setting();
+		cls.clkChkBx();
+		cls.save();
+	}
+	
+	
+}

@@ -1,0 +1,6 @@
+package com.odoo.pageobjects;
+
+public class PipelineDashboardPage extends BasePage
+{
+	public String salesTeam="//span[@text()='Sales Teams']";	
+}

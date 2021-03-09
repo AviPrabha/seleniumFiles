@@ -1,0 +1,14 @@
+package com.odoo.pageobjects;
+
+public class LeadsPage extends BasePage
+{	
+	public String createLeads="//button[contains(text(),'Create')]";
+	public String enterLeadsName="//input[@placeholder='e.g. Product Pricing']";
+	public String saveLeads="//button[contains(text(),'Save')]";
+	public String probability="//input[@name='probability']";
+	public String convertsLeadsToOpportunity="//span[text()='Convert to Opportunity']";
+	
+	
+	
+
+}

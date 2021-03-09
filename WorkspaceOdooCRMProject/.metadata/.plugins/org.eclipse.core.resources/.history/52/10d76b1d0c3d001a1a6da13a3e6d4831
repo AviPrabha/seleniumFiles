@@ -1,0 +1,26 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.steps.CreateSalesSteps;
+
+public class CreateSalesTeamFeatures
+{
+	CreateSalesSteps ccs;
+
+	public CreateSalesTeamFeatures(WebDriver driver)
+	{
+		ccs=new CreateSalesSteps(driver);
+	}
+
+	public void createSalesTeam() 
+	{
+		ccs.clickCRM();
+		ccs.clickConfiguration();
+		ccs.clkSalesTeam();
+		ccs.createsalesTeam();
+		ccs.enterSalesTeamName();	
+	}
+	
+	
+}

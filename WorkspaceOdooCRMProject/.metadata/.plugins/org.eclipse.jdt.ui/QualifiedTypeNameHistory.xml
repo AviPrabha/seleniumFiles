@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.odoo.pageobjects.PipelineDashboardPage"/>
+<fullyQualifiedTypeName name="com.odoo.pageobjects.SalesTeamPage"/>
+<fullyQualifiedTypeName name="com.odoo.steps.CreateCustomerSteps"/>
+<fullyQualifiedTypeName name="com.odoo.pageobjects.TeamLeaderPage"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.Thread.State"/>
+<fullyQualifiedTypeName name="io.github.bonigarcia.wdm.SeleniumServerStandaloneManager"/>
+<fullyQualifiedTypeName name="com.odoo.generic.ExcelUtilities"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.Workbook"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.Cell"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.WorkbookFactory"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="com.odoo.features.LoginFeatures"/>
+<fullyQualifiedTypeName name="com.odoo.features.SettingsFeatures"/>
+<fullyQualifiedTypeName name="java.lang.Runtime"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.odoo.generic.GenericLib"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.Row"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.odoo.pageobjects.SettingsPage"/>
+<fullyQualifiedTypeName name="com.odoo.steps.CheckLeadSteps"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+<fullyQualifiedTypeName name="com.odoo.pageobjects.ActivityTypesPage"/>
+<fullyQualifiedTypeName name="com.odoo.pageobjects.BasePage"/>
+<fullyQualifiedTypeName name="com.odoo.pageobjects.EmailTemplatePage"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+<fullyQualifiedTypeName name="com.odoo.steps.CreateActivitySteps"/>
+<fullyQualifiedTypeName name="com.odoo.generic.SeleniumLib"/>
+<fullyQualifiedTypeName name="com.odoo.pageobjects.OdooHomePage"/>
+<fullyQualifiedTypeName name="com.odoo.steps.OdooHomeSteps"/>
+<fullyQualifiedTypeName name="com.odoo.steps.CreateSalesSteps"/>
+<fullyQualifiedTypeName name="org.testng.annotations.Test"/>
+<fullyQualifiedTypeName name="com.odoo.scripts.BaseAbstractTest"/>
+<fullyQualifiedTypeName name="com.odoo.features.CreateSalesTeamFeatures"/>
+<fullyQualifiedTypeName name="com.odoo.features.CreateActivityFeatures"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.ui.WebDriverWait"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.ui.ExpectedConditions"/>
+<fullyQualifiedTypeName name="org.testng.Assert"/>
+<fullyQualifiedTypeName name="org.testng.Reporter"/>
+</qualifiedTypeNameHistroy>

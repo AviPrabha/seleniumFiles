@@ -1,0 +1,7 @@
+package com.odoo.pageobjects;
+
+public class SalesTeamPage 
+{
+	public String createSalesTeam="//button[contains(text(),'Create')]";
+	public String enterSalesTeamName="//input[@name='name']";
+}

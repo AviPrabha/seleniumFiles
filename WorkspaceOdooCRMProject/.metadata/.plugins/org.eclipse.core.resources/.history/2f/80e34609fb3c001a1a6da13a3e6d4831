@@ -1,0 +1,8 @@
+package com.odoo.pageobjects;
+
+public class BasePage 
+{
+	public String configBtn="//a[contains(text(),'Configuration')]";
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.odoo.pageobjects;
+
+public class ConvertToOpportunityPage 
+{
+	public String enterSalesPersonName="//input[@class='o_input ui-autocomplete-input']";
+	public String createAndEditSalesPerson="//a[text()='Create and Edit...']";
+	public String convertToOpportunity="//span[text()='Create Opportunity']";
+	
+	
+}

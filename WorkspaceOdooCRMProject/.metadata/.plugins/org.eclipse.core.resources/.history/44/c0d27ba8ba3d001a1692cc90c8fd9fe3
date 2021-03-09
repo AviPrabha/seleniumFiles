@@ -1,0 +1,28 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.steps.CreateSalesSteps;
+
+
+public class CreateSalesTeamFeatures
+{
+	CreateSalesSteps css;
+
+	public CreateSalesTeamFeatures(WebDriver driver)
+	{
+		css=new CreateSalesSteps(driver);
+	}
+
+	public void createSalesTeam(String salesteamname ) 
+	{
+		css.clickCRM();
+		css.clickConfiguration();
+		css.clkSalesTeam();
+		css.createSalesTeam(salesteamname);
+		css.teamLeaderName(tring teamleaderName,String emailID);
+		
+	}
+	
+	
+}

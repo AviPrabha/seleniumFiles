@@ -1,0 +1,30 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.steps.CreateLostReasonSteps;
+import com.odoo.steps.CreateSalesSteps;
+import com.odoo.steps.OdooHomeSteps;
+
+public class LostReasonFeatures
+{
+	CreateLostReasonSteps clrs;
+	OdooHomeSteps ohs;
+	CreateSalesSteps css;
+	
+	
+	public LostReasonFeatures(WebDriver driver)
+	{
+		clrs=new CreateLostReasonSteps(driver);
+		ohs=new OdooHomeSteps(driver);
+		css=new CreateSalesSteps(driver);
+	}
+	
+	public void createLostReason(String lostReason) 
+	{
+		ohs.clickCRM();
+		css.clickConfiguration();
+		clrs.createLostReason(lostReason);	
+		clrs.verifylostReason(lostReason);
+	}
+}

@@ -1,0 +1,8 @@
+package com.odoo.pageobjects;
+
+public class SettingsPage 
+{
+	public String laedChkBx="(//div[@class='o_setting_left_pane'])[1]";
+	public String saveLeadChk="//div[@class='o_statusbar_buttons']//span[text()='Save']";
+	
+}

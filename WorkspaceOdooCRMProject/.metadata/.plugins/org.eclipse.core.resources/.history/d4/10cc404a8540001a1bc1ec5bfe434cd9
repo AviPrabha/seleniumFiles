@@ -1,0 +1,25 @@
+package com.odoo.scripts;
+
+import org.testng.annotations.Test;
+
+import com.odoo.generic.ExcelUtilities;
+import com.odoo.generic.GenericLib;
+
+public class CustomerTest extends BaseAbstractTest
+{
+	@Test
+	public void createCustomer() 
+	{
+		ExcelUtilities eu=new ExcelUtilities(GenericLib.dir+"/testdata/Odoodata.xlsx");
+		String[] data = eu.readData("TC-Sales-008", "Sheet1");
+		lf.login(data[1], data[2]);
+		
+		cf.createCustomer(data[3], data[4], data[5], data[6], data[7]);
+		cf.verifyCustomer(data[4]);
+	}
+	
+	
+	
+	
+	
+}

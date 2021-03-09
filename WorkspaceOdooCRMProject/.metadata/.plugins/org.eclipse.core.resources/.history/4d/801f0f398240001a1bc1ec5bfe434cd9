@@ -1,0 +1,29 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.steps.CreateCustomerSteps;
+import com.odoo.steps.OdooHomeSteps;
+
+public class CustomerFeatures 
+{
+	CreateCustomerSteps ccs;
+	OdooHomeSteps ohs;
+
+	public CustomerFeatures(WebDriver driver) 
+	{
+		ccs=new CreateCustomerSteps(driver);
+		ohs=new OdooHomeSteps(driver);
+		
+		
+	}
+	
+	public void createCustomer(String title,String customerName,String emailString jobPosition,) 
+	{
+		ohs.clickCRM();
+		ccs.clickSales();
+		ccs.clickCustomer();
+		ccs.createCustomer(title, customerName, email);
+	
+	}
+}

@@ -1,0 +1,22 @@
+package com.odoo.scripts;
+
+import org.testng.annotations.Test;
+
+import com.odoo.generic.ExcelUtilities;
+import com.odoo.generic.GenericLib;
+
+public class SalesTeamTest extends BaseAbstractTest
+{
+	@Test
+	public void createSales()
+	{
+		ExcelUtilities eu=new ExcelUtilities(GenericLib.dir+"/testdata/Odoodata.xlsx");
+		String[] data = eu.readData("validLogin_ID", "Sheet1");
+		lf.login(data[1], data[2]);
+		
+		String[] data1=eu.readData("createTeamLead_Name","Sheet1");
+		cstf.createSalesTeam(data1[3],data1[4], data1[5]);
+		
+		
+	}
+}

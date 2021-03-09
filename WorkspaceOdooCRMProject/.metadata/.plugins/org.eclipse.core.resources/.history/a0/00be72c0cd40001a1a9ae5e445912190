@@ -1,0 +1,9 @@
+package com.odoo.pageobjects;
+
+public class SettingsPage extends BasePage
+{
+	public String laedChkBx="//div[@name='group_use_lead']//input[@class='custom-control-input']";
+	public String saveLeadChk="//div[@class='o_statusbar_buttons']//span[text()='Save']";
+
+	
+}

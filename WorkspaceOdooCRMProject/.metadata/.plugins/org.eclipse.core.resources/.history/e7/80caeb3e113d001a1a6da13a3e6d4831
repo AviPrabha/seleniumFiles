@@ -1,0 +1,9 @@
+package com.odoo.pageobjects;
+
+public class TeamLeaderPage {
+	public String username="//input[@id='o_field_input_398']";
+	public String email="//input[@id='o_field_input_399']";
+	public String save="//span[text()='Save']";
+	
+	
+}

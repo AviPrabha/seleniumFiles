@@ -1,0 +1,12 @@
+package com.odoo.pageobjects;
+
+public class SalesTeamPage 
+{
+	public String createSalesTeam="//li[text()='Sales Teams']/ancestor::div//button[contains(text(),'Create')]";
+	public String enterSalesTeamName="//input[@name='name']";
+	public String enterTeamLeaderName="//div[@name='user_id']//input";
+	public String createAndEdit="//a[text()='Create and Edit...']";
+	public String save="//button[contains(text(),'Save')]";
+	public String email="(//input[@name='login'])";
+	
+}

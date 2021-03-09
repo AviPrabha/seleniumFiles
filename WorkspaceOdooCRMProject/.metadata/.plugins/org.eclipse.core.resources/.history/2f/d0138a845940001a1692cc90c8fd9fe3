@@ -1,0 +1,23 @@
+package com.odoo.scripts;
+
+import org.testng.annotations.Test;
+
+import com.odoo.generic.ExcelUtilities;
+import com.odoo.generic.GenericLib;
+
+public class CreateActivityTest extends BaseAbstractTest
+{
+	@Test
+	public void CreateActivity()
+	{
+		ExcelUtilities eu=new ExcelUtilities(GenericLib.dir+"/testdata/Odoodata.xlsx");
+		String[] data=eu.readData("createSales_Team","Sheet1");
+		lf.login(data[1], data[2]);
+		
+		caf.createActivity(data[4],data[6]);
+		
+	}
+	
+	
+	
+}

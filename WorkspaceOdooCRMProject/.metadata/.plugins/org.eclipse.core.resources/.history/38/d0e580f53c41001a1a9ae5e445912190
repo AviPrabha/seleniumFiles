@@ -1,0 +1,122 @@
+package com.odoo.steps;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Random;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
+import com.odoo.generic.GenericLib;
+import com.odoo.generic.SeleniumLib;
+import com.odoo.pageobjects.CustomerPage;
+import com.odoo.pageobjects.PipelineDashboardPage;
+import com.odoo.pageobjects.ScheduleActivityPage;
+
+public class CreateNewOpportunitySteps
+{
+	WebDriver driver;
+	CustomerPage cp;
+	PipelineDashboardPage pdp;
+	SeleniumLib slib;
+	ScheduleActivityPage sat;
+	
+	
+	public CreateNewOpportunitySteps(WebDriver driver)
+	{
+		this.driver=driver;
+		cp=new CustomerPage();
+		pdp=new PipelineDashboardPage();
+		slib=new SeleniumLib(driver);
+		sat=new ScheduleActivityPage();
+	}
+	public void createOpportunity(String newOpportunityName,String customerName,String address,String jobPosition,String email,String expectedRevenue) 
+	{
+		
+		driver.findElement(By.xpath(pdp.createOpportunity)).click();
+		
+		driver.findElement(By.xpath(pdp.createOpportunity)).sendKeys(newOpportunityName+slib.randomValue());
+		
+		
+		
+		//driver.findElement(By.xpath(pdp.enterOpportunityName)).sendKeys(newOpportunityName);
+		driver.findElement(By.xpath(pdp.selectCustomerName)).click();
+		driver.findElement(By.xpath(pdp.createAndEditCustomer)).click();
+		WebDriverWait wait=new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cp.enterCustomerName))).sendKeys(customerName);
+		driver.findElement(By.xpath(cp.address)).sendKeys(address);
+		driver.findElement(By.xpath(cp.jobPosition)).sendKeys(jobPosition);
+		driver.findElement(By.xpath(cp.title)).click();
+		driver.findElement(By.xpath(cp.selectTitle)).click();
+		driver.findElement(By.xpath(cp.saveCustomer)).click();
+		driver.findElement(By.xpath(pdp.expectedRevenue)).clear();
+		driver.findElement(By.xpath(pdp.expectedRevenue)).sendKeys(expectedRevenue);
+		driver.findElement(By.xpath(pdp.addOpportunity)).click();
+		dynamicCustomerDetails(customerName, email);
+	
+	
+	
+	}
+	
+	public void moveOpportunityToQualified() 
+	{
+		driver.findElement(By.xpath(pdp.scheduleActivity)).click();
+		driver.findElement(By.xpath(pdp.CreateScheduleActivity)).click();
+		slib.iSleep(5);
+		driver.findElement(By.xpath(sat.enterActivityType)).click();
+		driver.findElement(By.xpath(sat.activityTypeEmail)).click();
+		driver.findElement(By.xpath(sat.scheduleButton)).click();
+		slib.iSleep(5);
+		
+		
+	}
+	
+	public void dynamicCustomerDetails(String customerName,String email) {
+		String[] name = customerName.split("_");
+		Random ran=new Random();
+		int num=ran.nextInt(1000);
+		String customerName1 = name[0]+"_"+num;
+		
+		String[] customerEmail = email.split("@");
+		String emailID = customerName1+"@"+customerEmail[1];
+		
+		try 
+		{	
+		File file=new File(GenericLib.dir+"/testdata/Odoodata.xlsx");
+	    Workbook wb=WorkbookFactory.create(new FileInputStream(file));
+	    Row rw=wb.getSheet("Sheet1").getRow(8);
+		Cell cl4=rw.createCell(4);
+		Cell cl5=rw.createCell(5);
+		cl4.setCellValue(customerName1);
+		cl5.setCellValue(emailID);
+		
+		wb.write(new FileOutputStream(file));
+		}
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		Reporter.log("******************dynamic*******************",true);
+		}	
+}
+
+
+
+
+
+
+

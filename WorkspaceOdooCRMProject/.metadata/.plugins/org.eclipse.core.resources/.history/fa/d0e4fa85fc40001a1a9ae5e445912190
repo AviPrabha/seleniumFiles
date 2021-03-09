@@ -1,0 +1,80 @@
+package com.odoo.steps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.generic.SeleniumLib;
+import com.odoo.pageobjects.ConvertToOpportunityPage;
+import com.odoo.pageobjects.LeadsPage;
+import com.odoo.pageobjects.LostReasonPage;
+import com.odoo.pageobjects.SalesPersonPage;
+
+public class CreateLeadsSteps 
+{
+	WebDriver driver;
+	LeadsPage lp;
+	SeleniumLib slib;
+	ConvertToOpportunityPage cop;
+	SalesPersonPage sps;
+	LostReasonPage lrp;
+	
+	public CreateLeadsSteps(WebDriver driver) 
+	{
+		this.driver=driver;
+		lp=new LeadsPage();
+		slib=new SeleniumLib(driver);
+		cop=new ConvertToOpportunityPage();
+		sps=new SalesPersonPage();
+		lrp=new LostReasonPage();
+		
+	}
+	
+	public void createLeads(String leadsName,String probability)
+	{
+		driver.findElement(By.xpath(lp.leads)).click();
+		slib.iSleep(5);
+		driver.findElement(By.xpath(lp.createLeads)).click();
+		driver.findElement(By.xpath(lp.enterLeadsName)).sendKeys(leadsName);
+		driver.findElement(By.xpath(lp.probability)).sendKeys(probability);
+		driver.findElement(By.xpath(lp.saveLeads)).click();
+		slib.iSleep(5);
+		driver.findElement(By.xpath(lp.convertsLeadsToOpportunity)).click();
+		slib.iSleep(5);
+	}
+	
+	public void convertLeadsToOpportunity(String salesPersonName,String email) 
+	{
+		driver.findElement(By.xpath(cop.enterSalesPersonName)).click();
+		driver.findElement(By.xpath(cop.createAndEditSalesPerson)).click();
+		driver.findElement(By.xpath(sps.salesPersonName)).sendKeys(salesPersonName);
+		driver.findElement(By.xpath(sps.email)).sendKeys(email);
+		driver.findElement(By.xpath(sps.saveSalesPerson)).click();
+		slib.iSleep(8);
+		driver.findElement(By.xpath(cop.convertToOpportunity)).click();
+		slib.iSleep(8);
+		driver.findElement(By.xpath(lp.markAsLost)).click();
+		slib.iSleep(4);
+		driver.findElement(By.xpath(lrp.lostReasonDropDown)).click();
+		slib.iSleep(3);
+		driver.findElement(By.xpath(lrp.selectLostReason)).click();
+		driver.findElement(By.xpath(lrp.submit)).click();
+		slib.iSleep(3);
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

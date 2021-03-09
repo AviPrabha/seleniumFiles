@@ -1,0 +1,63 @@
+package com.odoo.steps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.Reporter;
+
+import com.odoo.generic.SeleniumLib;
+import com.odoo.pageobjects.SettingsPage;
+
+public class CheckLeadSteps 
+{
+	WebDriver driver;
+	SettingsPage sp;
+	SeleniumLib slib;
+	
+	
+	public CheckLeadSteps(WebDriver driver)
+	{
+		this.driver=driver;
+		sp=new SettingsPage();
+		slib=new SeleniumLib(driver);
+	}
+	
+	public void clkConfig()
+	{
+		driver.findElement(By.xpath(sp.configBtn)).click();
+	}
+	
+	public void setting()
+	{
+		
+		driver.findElement(By.xpath(sp.settings)).click();
+	}
+	
+	public void clickChkBx()
+	{
+		boolean flag = driver.findElement(By.xpath(sp.laedChkBx)).isSelected();
+		if (flag) 
+		{
+			Reporter.log("CheckBox already checked",true);
+		}
+		else 
+		{
+			//slib.iSleep(5);
+			driver.findElement(By.xpath(sp.laedChkBx)).click();
+		}
+		
+
+	}	
+	public void save()
+	{ 
+		driver.findElement(By.xpath(sp.saveLeadChk)).click();
+	}
+	
+	public void verifyLead()
+	{
+		WebElement verifyLead = slib.waitForElementDisplay(20, By.xpath(sp.leads));
+		Assert.assertTrue(verifyLead.isDisplayed());
+		Reporter.log("Leads module is displayed",true);
+	}	
+}

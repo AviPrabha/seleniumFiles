@@ -1,0 +1,43 @@
+package com.odoo.steps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.pageobjects.CustomerPage;
+
+public class CreateCustomerSteps 
+{
+WebDriver driver;
+CustomerPage cp;
+
+	
+	
+	public CreateCustomerSteps(WebDriver driver)
+	{
+		this.driver=driver;
+		cp=new CustomerPage();
+	}
+	
+	public void clickSales() 
+	{
+		driver.findElement(By.xpath(cp.sales)).click();		
+	}
+	
+	public void clickCustomer() 
+	{
+		driver.findElement(By.xpath(cp.customers)).click();
+	}
+	
+	public void createCustomer(String title,String customerName,String email,String jobPosition)
+	{
+		driver.findElement(By.xpath(cp.createCustomer)).click();
+		driver.findElement(By.xpath(cp.enterCustomerName)).sendKeys(customerName);
+		driver.findElement(By.xpath(cp.title)).click();
+		driver.findElement(By.xpath(cp.mister)).click();
+		driver.findElement(By.xpath(cp.jobPosition)).sendKeys(jobPosition);
+		
+		driver.findElement(By.xpath(cp.email)).sendKeys(email);
+		driver.findElement(By.xpath(cp.saveCustomer)).click();
+		
+	}
+}

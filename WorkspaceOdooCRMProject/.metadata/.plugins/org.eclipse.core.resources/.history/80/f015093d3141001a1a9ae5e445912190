@@ -1,0 +1,12 @@
+package com.odoo.pageobjects;
+
+public class PipelineDashboardPage extends BasePage
+{	
+	public String createOpportunity="//button[contains(text(),'Create')]";
+	public String enterOpportunityName="//input[@name='name']";
+	public String selectCustomerName="//div[@class='o_input_dropdown']//input";
+	public String createAndEditCustomer="//a[text()='Create and Edit...']";
+	public String expectedRevenue="//div[@name='planned_revenue']";
+	public String addOpportunity="//div[@class='o_kanban_quick_create']//button[text()='Add']";
+	
+}

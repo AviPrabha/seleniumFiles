@@ -1,0 +1,21 @@
+package com.odoo.scripts;
+
+import org.testng.annotations.Test;
+
+import com.odoo.generic.ExcelUtilities;
+import com.odoo.generic.GenericLib;
+
+public class CreateNewLeadsTest extends BaseAbstractTest 
+{
+	@Test
+	public void createNewLeads() 
+	{
+		ExcelUtilities eu=new ExcelUtilities(GenericLib.dir+"/testdata/Odoodata.xlsx");
+		String[] data = eu.readData("TC-Leads-010", "Sheet1");
+		lf.login(data[1], data[2]);
+		cnlf.createNewLeads(data[10]);
+	}
+	
+	
+	
+}

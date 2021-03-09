@@ -1,0 +1,17 @@
+package com.odoo.pageobjects;
+
+public class PipelineDashboardPage extends BasePage
+{	
+	public String createOpportunity="//button[contains(text(),'Create')]";
+	public String enterOpportunityName="//input[@name='name']";
+	public String selectCustomerName="//div[@class='o_input_dropdown']//input";
+	public String createAndEditCustomer="//a[text()='Create and Edit...']";
+	public String expectedRevenue="//div[@name='planned_revenue']//input";
+	public String addOpportunity="//div[@class='o_kanban_quick_create']//button[text()='Add']";
+	public String scheduleActivity="(//span[@class='fa fa-lg fa-fw o_activity_color_default fa-clock-o'])[1]";
+	public String CreateScheduleActivity="//strong[text()='Schedule an activity']";
+	public String newOpportunity="//span[text()='New']/ancestor::div[@role='feed']//div[@role='article']";
+	public String qualified="//span[text()='Qualified']/ancestor::div[@role='feed']";
+	public String scheduleQualified="(//div[@class='o_kanban_group ui-sortable o_kanban_has_progressbar'])[2]//span[@title='Today']";
+	
+}

@@ -1,0 +1,23 @@
+package com.odoo.scripts;
+
+import org.testng.annotations.Test;
+
+import com.odoo.generic.ExcelUtilities;
+import com.odoo.generic.GenericLib;
+
+public class CreateNewOpportunityTest extends BaseAbstractTest
+{
+	@Test
+	public void createNewOpportunity() 
+	{
+		ExcelUtilities eu=new ExcelUtilities(GenericLib.dir+"/testdata/Odoodata.xlsx");
+		String[] data = eu.readData("TC-Opportunity-009", "Sheet1");
+		lf.login(data[1], data[2]);
+		cnos.createNewOpportunity(data[8], data[4], data[5], data[6], data[9] , data[05]);
+		
+		
+	}
+	
+	
+
+}

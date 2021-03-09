@@ -1,0 +1,13 @@
+package com.odoo.scripts;
+
+import org.testng.annotations.Test;
+
+public class ConfigurationTest extends BaseAbstractTest
+{
+	@Test
+	public void createSalesTeam()
+	{
+		
+	}
+	
+}

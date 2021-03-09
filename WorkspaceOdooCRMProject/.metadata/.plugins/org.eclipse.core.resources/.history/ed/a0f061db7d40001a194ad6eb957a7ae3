@@ -1,0 +1,11 @@
+package com.odoo.pageobjects;
+
+public class CustomerPage extends BasePage 
+{
+	public String createCustomer="//li[text()='Customers']/ancestor::div//button[contains(text(),'Create')]";
+	public String enterCustomerName="//input[@placeholder='Name']";
+	public String address="//input[@placeholder='Street...']";
+	
+	
+	
+}

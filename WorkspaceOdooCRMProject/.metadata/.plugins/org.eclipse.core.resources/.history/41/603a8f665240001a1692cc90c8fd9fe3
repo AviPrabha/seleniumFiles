@@ -1,0 +1,11 @@
+package com.odoo.pageobjects;
+
+public class ActivityTypesPage extends BasePage
+{
+	public String createActivity="//button[contains(text(),'Create')]";
+	public String enterName="//input[@name='name']";
+	public String recomActivity="//div[@name='next_type_ids']//input";
+	public String emailTemp="//div[@name='next_type_ids']//div[@class='o_input_dropdown']";
+	
+	
+}

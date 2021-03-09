@@ -1,0 +1,12 @@
+package com.odoo.pageobjects;
+
+public class LeadsPage 
+{	
+	public String createLeads="//button[contains(text(),'Create')]";
+	public String enterLeadsName="//input[@placeholder='e.g. Product Pricing']";
+	public String saveLeads="//button[contains(text(),'Save')]";
+	
+	
+	
+
+}

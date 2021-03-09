@@ -1,0 +1,11 @@
+package com.odoo.pageobjects;
+
+public class ScheduleActivityPage 
+{
+	public String enterActivityType="//div[@name='activity_type_id']//div//input";
+	public String activityTypeEmail="//a[text()='Email']";
+	public String scheduleButton="//button[@name='action_close_dialog']//span[text()='Schedule']";
+	public String activityTypeMeeting="//a[text()='Meeting']";
+	public String saveActivity="//a[text()='Meeting']";
+	
+}

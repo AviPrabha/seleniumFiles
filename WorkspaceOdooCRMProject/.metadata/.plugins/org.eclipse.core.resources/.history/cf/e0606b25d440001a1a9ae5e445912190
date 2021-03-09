@@ -1,0 +1,7 @@
+package com.odoo.pageobjects;
+
+public class PipelineDashboardPage extends BasePage
+{	
+	public String createOpportunity="//button[contains(text(),'Create')]";
+	
+}

@@ -1,0 +1,8 @@
+package com.odoo.pageobjects;
+
+public abstract class BasePage 
+{
+	public String configBtn="//a[contains(text(),'Configuration')]";
+	public String salesTeam="//span[text()='Sales Teams']";
+	
+}

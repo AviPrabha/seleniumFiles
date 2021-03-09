@@ -1,0 +1,17 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+public class CreateNewOpportunityFeatures 
+{
+	
+	
+	public CreateNewOpportunityFeatures(WebDriver driver) 
+	{
+		
+		
+	}
+	
+	
+	
+}

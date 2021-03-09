@@ -1,0 +1,11 @@
+package com.odoo.pageobjects;
+
+public class TeamLeaderPage 
+{
+	public String username="//label[text()='Name']//following-sibling::h1//input[@name='name']";
+	public String email="//input[@placeholder='email@yourcompany.com']";
+	public String save="//button[@type='button']//span[text()='Save']";
+	//public String photo="//button[@title='Edit']";
+	public String photo="//button[@aria-label='Edit']";
+	
+}

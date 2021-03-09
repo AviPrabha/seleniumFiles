@@ -1,0 +1,29 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.steps.CreateLeadsSteps;
+import com.odoo.steps.OdooHomeSteps;
+
+public class CreateNewLeadsFeatures 
+{
+	OdooHomeSteps ohs;
+	CreateLeadsSteps cls;
+	
+	
+	public CreateNewLeadsFeatures(WebDriver driver) 
+	{
+		ohs=new OdooHomeSteps(driver);
+		cls=new CreateLeadsSteps(driver);
+		
+	}
+	
+	public void createNewLeads(String leadsName,String probability) 
+	{
+		ohs.clickCRM();
+		cls.createLeads(leadsName,probability);
+		
+	}
+	
+	
+}

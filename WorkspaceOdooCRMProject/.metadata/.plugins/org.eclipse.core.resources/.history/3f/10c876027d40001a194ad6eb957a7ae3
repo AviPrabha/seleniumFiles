@@ -1,0 +1,8 @@
+package com.odoo.pageobjects;
+
+public class EmailTemplatePage 
+{
+	public String enterMailTempName="(//input[@name='name'])[2]";
+	public String saveAndCloseTempName="//span[text()='Save & Close']";	
+	
+}

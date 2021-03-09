@@ -1,0 +1,36 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.generic.SeleniumLib;
+import com.odoo.steps.ActivitySteps;
+import com.odoo.steps.CreateSalesSteps;
+import com.odoo.steps.OdooHomeSteps;
+
+public class ActivityFeatures
+{
+	ActivitySteps cas;
+	SeleniumLib slib;
+	OdooHomeSteps ohp;
+	CreateSalesSteps css;	
+	
+	
+	public ActivityFeatures(WebDriver driver)
+	{
+		cas=new ActivitySteps(driver);
+		slib=new SeleniumLib(driver);
+		ohp=new OdooHomeSteps(driver);
+		css=new CreateSalesSteps(driver);
+		
+	}
+	
+	public void createActivity(String activityName,String templateName)
+	{
+		ohp.clickCRM();
+		css.clickConfiguration();
+		cas.clkActivityType();
+		cas.createActivity(activityName, templateName);
+		cas.verifyActivity(activityName);
+	}
+	
+}

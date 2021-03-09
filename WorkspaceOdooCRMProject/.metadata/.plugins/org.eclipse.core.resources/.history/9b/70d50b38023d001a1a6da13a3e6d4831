@@ -1,0 +1,6 @@
+package com.odoo.pageobjects;
+
+public class SalesTeamPage 
+{
+	public String createSalesTeam="//button[contains(text(),'Create')]";
+}

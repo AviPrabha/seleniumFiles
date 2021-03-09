@@ -1,0 +1,9 @@
+package com.odoo.pageobjects;
+
+public class LostReasonPage extends BasePage
+{
+	public String createLostReason="//li[text()='Lost Reasons']/ancestor::div//button[contains(text(),'Create')]";
+	public String enterLostReason="//input[@name='name']";
+	public String saveLostReason="//div[@aria-label]//button[contains(text(),'Save')]";
+	public String lostReasonName="//td[text()='expensive']";
+}

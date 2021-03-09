@@ -1,0 +1,39 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.generic.SeleniumLib;
+import com.odoo.pageobjects.OdooHomePage;
+import com.odoo.steps.CreateSalesSteps;
+import com.odoo.steps.OdooHomeSteps;
+
+
+public class CreateSalesTeamFeatures
+{
+	CreateSalesSteps css;
+	SeleniumLib slib;
+	OdooHomeSteps ohs;
+
+	public CreateSalesTeamFeatures(WebDriver driver)
+	{
+		slib=new SeleniumLib(driver);
+		css=new CreateSalesSteps(driver);
+		ohs=new OdooHomeSteps(driver);
+	}
+
+	public void createSalesTeam(String salesteamname,String teamleaderName,String emailID ) 
+	{
+		slib.iSleep(6);
+		ohs.clickCRM();
+		css.clickConfiguration();
+		css.clkSalesTeam();
+		slib.iSleep(3);
+		css.createSalesTeam(salesteamname);
+		slib.iSleep(3);
+		css.teamLeaderName(teamleaderName,emailID);
+		css.saveSalesTeam();
+		
+	}
+	
+	
+}

@@ -1,0 +1,37 @@
+package com.odoo.features;
+
+import org.openqa.selenium.WebDriver;
+
+
+import com.odoo.steps.CreateNewOpportunitySteps;
+import com.odoo.steps.OdooHomeSteps;
+
+public class CreateNewOpportunityFeatures 
+{
+	CreateNewOpportunitySteps cnof;
+	OdooHomeSteps ohp;
+	
+	
+	public CreateNewOpportunityFeatures(WebDriver driver) 
+	{
+		cnof=new CreateNewOpportunitySteps(driver);
+		ohp=new OdooHomeSteps(driver);
+		
+	}
+	
+	public void createNewOpportunity(String newOpportunityName,String  customerName,String  address,String  jobPosition,String  expectedRevenue, String email) 
+	{
+		ohp.clickCRM();
+		cnof.createOpportunity(newOpportunityName, customerName, address, jobPosition, email, expectedRevenue);
+	}
+	
+	public void scheduleActivity() 
+	{
+		cnof.moveOpportunityToQualified();
+		
+		
+	}
+	
+	
+	
+}

@@ -1,0 +1,74 @@
+package com.odoo.steps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.odoo.generic.SeleniumLib;
+import com.odoo.pageobjects.OdooHomePage;
+import com.odoo.pageobjects.PipelineDashboardPage;
+import com.odoo.pageobjects.SalesTeamPage;
+import com.odoo.pageobjects.TeamLeaderPage;
+
+public class CreateSalesSteps
+{
+	WebDriver driver;
+	OdooHomePage ohp;
+	PipelineDashboardPage pdp;
+	SalesTeamPage stp;
+	TeamLeaderPage tlp;
+	SeleniumLib slib;
+	
+	public CreateSalesSteps(WebDriver driver) 
+	{
+		this.driver=driver;
+		ohp=new OdooHomePage(); 
+		pdp=new PipelineDashboardPage();
+		stp=new SalesTeamPage();
+		tlp=new TeamLeaderPage();
+		slib=new SeleniumLib(driver);
+	}
+	
+	
+	 
+	public void clickCRM()
+	{
+		driver.findElement(By.xpath(ohp.crm)).click();
+	}
+	
+	
+	
+	public void clickConfiguration()
+	{
+		driver.findElement(By.xpath(pdp.configBtn)).click();
+	}
+	
+	public void clkSalesTeam() 
+	{
+		driver.findElement(By.xpath(pdp.salesTeam)).click();
+	}
+	
+	public void createSalesTeam(String salesteamname) 
+	{
+		WebDriverWait wait=new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(stp.enterSalesTeamName)));
+		//driver.findElement(By.xpath(stp.enterSalesTeamName)).sendKeys(salesteamname);
+		driver.findElement(By.xpath(stp.enterTeamLeaderName)).click();
+		driver.findElement(By.xpath(stp.createAndEdit)).click();
+	}
+	
+	public void teamLeaderName(String teamleaderName,String emailID) 
+	{
+		driver.findElement(By.xpath(tlp.username)).sendKeys(teamleaderName);
+		driver.findElement(By.xpath(tlp.email)).sendKeys(emailID);
+		driver.findElement(By.xpath(tlp.save)).click();
+	}
+	
+	public void saveSalesTeam()
+	{
+		driver.findElement(By.xpath(stp.save)).click();
+	}
+	
+	
+}

@@ -1,0 +1,12 @@
+package com.odoo.pageobjects;
+
+public class SalesPersonPage 
+{
+	public String salesPersonName="//input[@name='name']";
+	public String saveSalesPerson="//span[text()='Save']";
+	public String email="//input[@name='login']";
+	
+	
+	
+	
+}

@@ -1,0 +1,49 @@
+package com.odoo.steps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.generic.SeleniumLib;
+import com.odoo.pageobjects.ActivityTypesPage;
+import com.odoo.pageobjects.EmailTemplatePage;
+import com.odoo.pageobjects.SettingsPage;
+
+public class CreateActivitySteps 
+{
+	WebDriver driver;
+	SettingsPage sp;
+	SeleniumLib slib;
+	ActivityTypesPage atp;
+	EmailTemplatePage etp;
+	
+	
+public CreateActivitySteps(WebDriver driver) 
+{
+	this.driver=driver;
+	sp=new SettingsPage();
+	slib=new SeleniumLib(driver);
+	atp=new ActivityTypesPage();
+	etp=new EmailTemplatePage();
+	
+}
+
+public void clkActivityType() 
+{	
+	driver.findElement(By.xpath(atp.activityTypes)).click();
+}
+
+public void createActivity(String activityName,String templateName)
+{
+	slib.waitForElementDisplay(5,By.xpath(atp.createActivity));
+	driver.findElement(By.xpath(atp.createActivity)).click();
+	slib.iSleep(2);
+	driver.findElement(By.xpath(atp.enterName)).sendKeys(activityName);
+	driver.findElement(By.xpath(atp.emailTemp)).click();
+	driver.findElement(By.xpath(atp.createAndEdit)).click();
+	driver.findElement(By.xpath(etp.enterMailTempName)).sendKeys(templateName);
+	driver.findElement(By.xpath(etp.saveAndCloseTempName)).click();
+	slib.iSleep(3);
+	driver.findElement(By.xpath(atp.saveActivity)).click();
+
+}
+}

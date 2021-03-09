@@ -1,0 +1,11 @@
+package com.odoo.pageobjects;
+
+public class ConvertToOpportunityPage 
+{
+	public String enterSalesPersonName="//a[@class='o_dropdown_button']";
+	public String createAndEditSalesPerson="//a[text()='Create and Edit...']";
+	public String convertToOpportunity="//span[text()='Create Opportunity']";
+	
+	
+	
+}

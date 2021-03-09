@@ -1,0 +1,35 @@
+package com.odoo.steps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.odoo.pageobjects.CustomerPage;
+import com.odoo.pageobjects.PipelineDashboardPage;
+
+public class CreateNewOpportunitySteps
+{
+	WebDriver driver;
+	CustomerPage cp;
+	PipelineDashboardPage pdp;
+	
+	public CreateNewOpportunitySteps(WebDriver driver)
+	{
+		this.driver=driver;
+		cp=new CustomerPage();
+		pdp=new PipelineDashboardPage();
+			
+	}
+	public void createOpportunity(String newOpportunityName,String expectedRevenue) 
+	{
+		driver.findElement(By.xpath(pdp.createOpportunity)).click();
+		driver.findElement(By.xpath(pdp.enterOpportunityName)).sendKeys(newOpportunityName);
+		driver.findElement(By.xpath(pdp.selectCustomerName)).click();
+		driver.findElement(By.xpath(pdp.createAndEditCustomer)).click();
+		driver.findElement(By.xpath(pdp.expectedRevenue)).sendKeys(expectedRevenue);
+		driver.findElement(By.xpath(pdp.addOpportunity)).click();
+		
+		
+	}
+	
+	
+}
